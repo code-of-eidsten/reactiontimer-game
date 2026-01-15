@@ -1,7 +1,7 @@
 <template>
-  <h1>Reaction Timer Game</h1>
+  <h1>Slå til postmannen når han dukker opp! (trykk start når du er klar)</h1>
   <Results v-if="showResults" :score="score" />
-  <button class="startBtn" @click="start" :disabled="isPlaying">Start Game</button>
+  <button class="startBtn" @click="start" :disabled="isPlaying">Start Game</button><br>
   <Block v-if="isPlaying" :delay="delay" @end="endGame" />
 </template>
 

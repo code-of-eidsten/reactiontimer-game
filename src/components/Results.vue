@@ -1,6 +1,6 @@
 <template>
     <div class="results">
-        <h2> Your Reaction Time: {{ score }} ms!</h2>
+        <h2> Du brukte: {{ score }}ms på å slå til postmannen!</h2>
         <h1>{{ rank }}</h1>
     </div>
 </template>
@@ -15,11 +15,11 @@ export default {
     },
     mounted() {
         if (this.score < 300) {
-            this.rank = '⚡Lightning has nothing on you!⚡';
+            this.rank = '⚡Som han ble truffet av lynet!⚡';
         } else if (this.score < 400) {
-            this.rank = ' 👏Pro clicker!👏';
+            this.rank = ' 👏Proffbokser!👏';
         } else if (this.score < 600) {
-            this.rank = 'Average reaction 🙆';
+            this.rank = 'Den kjente han nok! 🙆';
         } else {
             this.rank = 'Sloooow..🐌';
         }

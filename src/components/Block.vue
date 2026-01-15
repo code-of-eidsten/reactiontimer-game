@@ -1,5 +1,5 @@
 <template>
-    <div class="block" v-if="showBlock" @click="stopTimer"> CLICK ME FAST!</div>
+    <img src="../assets/postman.jpg" class="block" v-if="showBlock" @click="stopTimer" />
 </template>
 
 <script>
@@ -35,14 +35,9 @@ export default {
 
 <style>
 .block {
-    width: 200px;
-    border-radius: 20px;
-    background-color: rgb(100, 117, 230);
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    padding: 100px 0;
-    margin: 40px auto;
+    width: 400px;
     cursor: pointer;
+    border: 2px solid rgb(100, 117, 230);
+    border-radius: 10px;
 }
 </style>
