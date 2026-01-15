@@ -1,5 +1,5 @@
 <template>
-    <div class="block" v-if="showBlock"> CLICK ME FAST!</div>
+    <div class="block" v-if="showBlock" @click="stopTimer"> CLICK ME FAST!</div>
 </template>
 
 <script>
@@ -8,21 +8,26 @@ export default {
     data() {
         return {
             showBlock: false,
-            clicked: false,
+            timer: null,
+            reactionTime: 0,
         }
     },
     mounted() {
-        console.log(`Block component mounted.`);
         setTimeout(() => {
-            this.showBlock = true;
-            console.log(`Current delay: ${this.delay} ms.`);
-        }, this.delay);
+            this.showBlock = true
+            this.startTimer()
+        }, this.delay)
     },
-    updated() {
-        console.log(`Block component updated.`);
-    },
-    unmounted() {
-        console.log(`Block component unmounted.`);
+    methods: {
+        startTimer() {
+            this.timer = setInterval(() => {
+                this.reactionTime += 10
+            }, 10)
+        },
+        stopTimer() {
+            clearInterval(this.timer)
+            this.$emit('end', this.reactionTime)
+        },
     },
 
 }
