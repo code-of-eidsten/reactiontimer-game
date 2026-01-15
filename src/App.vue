@@ -58,4 +58,9 @@ export default {
   color: white;
   cursor: pointer;
 }
+
+.startBtn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
 </style>
